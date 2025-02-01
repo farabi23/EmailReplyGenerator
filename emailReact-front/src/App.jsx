@@ -1,34 +1,49 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+
+import { useState } from 'react';
+import { Container, TextField, Typography, Box, FormControl, InputLabel, MenuItem } from '@mui/material';
 import './App.css'
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+  const [emailContent, setEmailContent] = useState('');
+  const [tone, setTone] = useState('');
+  const [generatedReply, setGeneratedReply] = useState('');
+
+  const [loading, setLoading] = useState(false);
+
+  const[error, setError] = useState('');
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <Container maxWidth="md" sx={{py:4}}>
+
+      <Typography variant="h3" component="h1" gutterBottom>
+        Email Reply Generator
+      </Typography>   
+
+      <Box sx={ { mx:3} }>
+         <TextField fullWidth multiline rows={6} variant='outlined' label='Original Email Content' value={emailContent||''}
+         onChange={(e) => setEmailContent(e.target.value)}
+         sx={{mb:2}}
+         />
+
+         <FormControl>
+          <InputLabel>Tone (Optional)</InputLabel>
+          <Select 
+          value={tone || ''}
+          label={"Tone (Optional)"}
+          onChange={(e) => setTone(e.target.value)}>
+
+            <MenuItem value="">None</MenuItem>
+            <MenuItem value="professional">Professional</MenuItem>
+            <MenuItem value="casual">Casual</MenuItem>
+            <MenuItem value="friendly">Friendly</MenuItem>
+        
+          </Select>
+         </FormControl>
+
+      </Box>
+
+    </Container>
   )
 }
 

@@ -19,7 +19,8 @@ The assistant is built as a **Chrome extension for Gmail**, using **Spring AI wi
 - **API Requirement:** Gemini AI API Key (currently free to use)
 
 ## Project Structure
-'''
+
+```
 Email-Writer-Sb/
 ├── email-react-front/
 │   ├── dist 
@@ -63,7 +64,8 @@ Email-Writer-Sb/
 ├── mvnw
 ├── mvnw.cmd
 └── pom.xml
-'''
+```
+
 ## Installation & Setup
 ### 1. Backend Setup
 1. Clone the repository:

@@ -19,8 +19,9 @@ The assistant is built as a **Chrome extension for Gmail**, using **Spring AI wi
 - **API Requirement:** Gemini AI API Key (currently free to use)
 
 ## Project Structure
+'''
 Email-Writer-Sb/
-├── email-react-front/       #Frontend React.js
+├── email-react-front/
 │   ├── dist 
 │   ├── node_modules
 │   ├── public/
@@ -37,11 +38,11 @@ Email-Writer-Sb/
 │   ├── vite.config.js
 │   ├── package.json
 │   └── package-lock.json
-├── email-writer-ext/   #Extension files for Chrome & gmail
+├── email-writer-ext/
 │   ├── content.css
 │   ├── content.js
 │   └── manifest.json
-├── src/              #Backend SpringBoot Java
+├── src/
 │   ├── main/
 │   │   ├── java/
 │   │   │   └── com/
@@ -62,7 +63,7 @@ Email-Writer-Sb/
 ├── mvnw
 ├── mvnw.cmd
 └── pom.xml
-
+'''
 ## Installation & Setup
 ### 1. Backend Setup
 1. Clone the repository:
